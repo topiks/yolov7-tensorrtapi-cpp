@@ -49,38 +49,3 @@ cudnn
 target_link_directories(${ProjectName} PUBLIC /usr/local/cuda/lib64)
 message(STATUS "CUDA VERSION: ${CUDA_VERSION}")
 
-# find_package(CUDA)
-# if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.13.0") 
-#     if(MSVC_VERSION)
-#         target_link_directories(${ProjectName} PUBLIC ${CUDA_TOOLKIT_ROOT_DIR}/bin)
-#         target_link_directories(${ProjectName} PUBLIC ${CUDA_TOOLKIT_ROOT_DIR}/lib/x64)
-#     else()
-#         target_link_directories(${ProjectName} PUBLIC /usr/local/cuda/lib64)
-#     endif()
-# endif()
-# if(CUDA_FOUND)
-#     if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.13.0") 
-#         if(NOT $ENV{TensorRT_ROOT} STREQUAL "")
-#             target_link_directories(${ProjectName} PUBLIC $ENV{TensorRT_ROOT}/lib)
-#         endif()
-#     endif()
-#     target_link_libraries(${ProjectName} PRIVATE
-#         ${CUDA_LIBRARIES}
-#         nvinfer
-#         nvonnxparser
-#         nvinfer_plugin
-#         cudnn
-#     )
-#     target_include_directories(${ProjectName} PUBLIC
-#         ${CUDA_INCLUDE_DIRS}
-#         tensorrt
-#     )
-#     if(NOT $ENV{TensorRT_ROOT} STREQUAL "")
-#         target_include_directories(${ProjectName} PUBLIC $ENV{TensorRT_ROOT}/include)
-#     endif()
-#     add_definitions(-DINFERENCE_HELPER_ENABLE_TENSORRT)
-#     message("CUDA_INCLUDE_DIRS: ${CUDA_INCLUDE_DIRS}")
-# else()
-#     message(WARNING, "Cannot find CUDA")
-# endif()
-
