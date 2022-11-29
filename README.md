@@ -19,6 +19,7 @@ https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html
 
 ### Run
 1. mkdir build && cd build
-2. make
-3. ./main
+2. cmake ..
+3. make
+4. ./main
 
